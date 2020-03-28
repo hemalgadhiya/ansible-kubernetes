@@ -58,16 +58,6 @@
           --zones={{ node_zone }}"
   when: kops_get_clusters.rc != 0
 
-# - name: edit clusters
-#   shell: "kops edit cluster \
-#           --name {{ cluster_name }} \
-#           --state {{ state_store }} "
-#   register: cluster_edit
-#
-# - debug:
-#     var: cluster_edit
-
-
 - block:
   - name: kops update
     shell: "kops update cluster --state {{ state_store }} --yes --name {{ cluster_name }}"
@@ -82,4 +72,4 @@
   until: cmd_result.stdout.find('Your cluster ' + cluster_name + ' is ready') != -1
   retries: 10
   delay: 75
-  when: kops_get_clusters.rc != 0
+  # when: kops_get_clusters.rc != 0
