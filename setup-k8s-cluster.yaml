@@ -6,4 +6,5 @@
     - create-vpc-peering
 
   environment:
-    AWS_PROFILE: kops
+    AWS_PROFILE: "{{ profile }}"
+    # EDITOR: gedit

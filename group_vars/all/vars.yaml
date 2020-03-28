@@ -1,0 +1,25 @@
+bastion: true
+
+dns_zone: k8s.dev.hgadhiya.me.
+
+master_count: 1
+
+master_size: t3.medium
+
+node_count: 1
+
+node_size: t3.medium
+
+state_store: s3://k8s-dev-hgadhiya-state-store
+
+cluster_name: k8s.dev.hgadhiya.me
+
+kubernetes_version: 1.15.7
+
+ssh_key: /home/hemal/.ssh/csye7374.pub
+
+kubernetes_networking: calico
+
+region: us-east-1
+
+profile: kops
